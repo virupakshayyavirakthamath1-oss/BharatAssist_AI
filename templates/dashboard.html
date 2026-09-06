@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome, {{session.get('name')}} 👋</h1>
+<p class="lead">Choose an assistant module.</p>
+<div class="grid">
+<a class="card linkcard" href="{{url_for('assistant')}}">🤖 <h2>AI Assistant</h2><p>Ask anything.</p></a>
+<a class="card linkcard" href="{{url_for('education')}}">🎓 <h2>Education</h2><p>Study smarter.</p></a>
+<a class="card linkcard" href="{{url_for('government')}}">🏛️ <h2>Government</h2><p>Understand services.</p></a>
+<a class="card linkcard" href="{{url_for('career')}}">💼 <h2>Career</h2><p>Plan your future.</p></a>
+<a class="card linkcard" href="{{url_for('agriculture')}}">🌾 <h2>Agriculture</h2><p>Farming guidance.</p></a>
+<a class="card linkcard" href="{{url_for('health')}}">🩺 <h2>Health</h2><p>General health info.</p></a>
+<a class="card linkcard" href="{{url_for('documents')}}">📄 <h2>Documents</h2><p>Upload and extract.</p></a>
+</div>
+{% endblock %}

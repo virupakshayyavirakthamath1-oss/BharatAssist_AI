@@ -1,0 +1,2 @@
+{% extends "base.html" %}
+{% block content %}<div class="module"><div class="bigicon">{{icon}}</div><h1>{{title}}</h1><p class="lead">{{description}}</p><div class="card"><h2>What you can do</h2><ul>{% for b in bullets %}<li>{{b}}</li>{% endfor %}</ul></div><a class="btn" href="{{url_for('assistant')}}">Ask AI</a></div>{% endblock %}

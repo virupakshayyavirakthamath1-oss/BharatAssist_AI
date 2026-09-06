@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+<div>
+<span class="pill">🇮🇳 AI for everyday India</span>
+<h1>One AI assistant for <span>real-life problems.</span></h1>
+<p>Ask questions, understand documents, learn, explore careers and get multilingual assistance from one platform.</p>
+<a class="btn" href="{{ url_for('register') }}">Start using BharatAssist</a>
+<a class="btn ghost" href="{{ url_for('features') }}">Explore features</a>
+</div>
+<div class="hero-card"><div class="robot">🤖</div><h3>Namaste! How can I help?</h3><p>Education · Government · Career · Agriculture · Health · Documents</p></div>
+</section>
+<section class="grid">
+<div class="card">🎓 <h3>Education</h3><p>Learn difficult topics and prepare for exams.</p></div>
+<div class="card">🏛️ <h3>Government</h3><p>Understand services and application checklists.</p></div>
+<div class="card">💼 <h3>Career</h3><p>Build skills, projects and interview plans.</p></div>
+<div class="card">📄 <h3>Documents</h3><p>Extract and understand PDF/TXT documents.</p></div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+Python is a high-level, general-purpose programming language known for its simple and readable syntax.
+
+Python is widely used in web development, automation, data analysis, artificial intelligence, machine learning, scientific computing, and education.
+
+Python supports procedural programming, object-oriented programming, and functional programming.
+
+Python programs are generally easy for beginners to read and write.
+
+Python uses indentation to define blocks of code.
+
+Popular Python web frameworks include Flask and Django.
+
+Python is an interpreted language and is available on Windows, Linux, and macOS.
+
+Python has a large ecosystem of libraries and frameworks for software development, data science, artificial intelligence, and automation.

@@ -1,0 +1,13 @@
+Django is a high-level Python web framework used to build web applications quickly and securely.
+
+Django follows the Model-Template-View architecture, commonly called MTV.
+
+Django includes features such as URL routing, templates, database models, forms, authentication, sessions, and an administration interface.
+
+Django can work with databases such as SQLite, PostgreSQL, MySQL, and MariaDB.
+
+Django is commonly used for websites, APIs, content management systems, dashboards, and data-driven web applications.
+
+A Django project can contain multiple applications, where each application provides a specific feature.
+
+Django uses Python and is suitable for developers who want to build structured and maintainable web applications.

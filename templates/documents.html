@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}<h1>📄 Document Assistant</h1><p class="lead">Upload a TXT or PDF to extract its text.</p>
+<form method="post" enctype="multipart/form-data" class="card"><input type="file" name="document" accept=".pdf,.txt"><button class="btn">Extract text</button></form>
+{% if extracted %}<div class="answer"><h3>Extracted text</h3><pre>{{extracted}}</pre></div>{% endif %}{% endblock %}
