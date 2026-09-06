@@ -13,6 +13,7 @@ from flask import (
 )
 
 from werkzeug.security import generate_password_hash, check_password_hash
+import sqlite3
 
 from database import init_db, get_db
 
@@ -92,8 +93,20 @@ def register():
 
         db = get_db()
 
-        try:
+        # Check the email explicitly before inserting.
+        existing_user = db.execute(
+            "SELECT id FROM users WHERE LOWER(email) = ?",
+            (email,)
+        ).fetchone()
 
+        if existing_user:
+            flash(
+                "Email already registered. Please use a different email or log in.",
+                "error"
+            )
+            return render_template("register.html")
+
+        try:
             db.execute(
                 """
                 INSERT INTO users(name, email, password_hash)
@@ -105,16 +118,24 @@ def register():
                     generate_password_hash(password),
                 )
             )
-
             db.commit()
 
-        except Exception:
-
+        except sqlite3.IntegrityError as e:
+            db.rollback()
+            print("REGISTRATION INTEGRITY ERROR:", e)
             flash(
-                "Email already registered.",
+                "This email is already registered. Please use a different email.",
                 "error"
             )
+            return render_template("register.html")
 
+        except Exception as e:
+            db.rollback()
+            print("REGISTRATION DATABASE ERROR:", e)
+            flash(
+                "Registration could not be completed because of a server database error. Please try again later.",
+                "error"
+            )
             return render_template("register.html")
 
         flash(
