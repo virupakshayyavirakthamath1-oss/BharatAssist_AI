@@ -1,0 +1,2 @@
+Python career roadmap
+A beginner Python developer can progress through Python fundamentals, Git/GitHub, SQL, APIs, Flask or Django, testing, deployment and a few portfolio projects. Useful portfolio projects should demonstrate authentication, database usage, API integration, validation, error handling, testing and deployment rather than only a basic calculator or to-do list.

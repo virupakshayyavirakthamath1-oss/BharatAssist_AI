@@ -1,0 +1,3 @@
+Agriculture guidance
+Crop decisions depend on crop variety, soil, season, local weather, irrigation and pest pressure. General advice should be verified with local agricultural extension services or a qualified agronomist before significant treatment or spending.
+A good crop-care workflow is: identify crop and growth stage -> identify symptom/pest accurately -> check weather and field conditions -> choose an appropriate integrated management option -> follow the product label and local agricultural guidance.

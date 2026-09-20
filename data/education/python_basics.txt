@@ -1,0 +1,3 @@
+Python basics
+Python is a high-level general-purpose programming language. Common beginner concepts include variables, strings, numbers, lists, tuples, dictionaries, sets, conditions, loops, functions, modules, exceptions, files and classes.
+For a college student, a useful learning order is: syntax and variables -> conditions and loops -> functions -> collections -> modules and packages -> file handling -> exceptions -> OOP -> databases -> web development -> APIs -> testing and deployment.
