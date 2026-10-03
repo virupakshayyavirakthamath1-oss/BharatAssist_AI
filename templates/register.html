@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth">
+<h1>Create account</h1>
+<p>Your email must be verified with a one-time code.</p>
+<form method="post">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<input name="name" placeholder="Full name" autocomplete="name" required>
+<input name="email" type="email" placeholder="Email" autocomplete="email" required>
+<input name="password" type="password" placeholder="Password (8+ characters)" autocomplete="new-password" minlength="8" required>
+<button class="btn">Register & Verify Email</button>
+</form>
+<p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+<p>Or <a href="{{ url_for('google_login') }}">Continue with Google</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🤖 BharatAssist AI</h1>
+<p class="lead">Ask questions in English, Hindi or Kannada. Current questions can use web-grounded answers when enabled.</p>
+<form method="post" class="ask"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<textarea name="query" placeholder="Ask your question in English, Hindi or Kannada..." required>{{query}}</textarea>
+<button class="btn">Ask BharatAssist</button>
+</form>
+{% if answer %}
+<div class="answer">
+  <div class="meta">{{category}} · {{language}} · {{provider}}</div>
+  <div class="answer-text">{{answer|replace('\n','<br>')|safe}}</div>
+  {% if sources %}
+  <h4>Sources / verification</h4>
+  <ul>
+    {% for s in sources %}
+      <li>{% if s.url %}<a href="{{s.url}}" target="_blank" rel="noopener noreferrer">{{s.title}}</a>{% else %}{{s.title}}{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <div class="notice">{{safety_notice(category)}}</div>
+</div>
+{% endif %}
+{% endblock %}

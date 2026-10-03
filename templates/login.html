@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth">
+<h1>Welcome back</h1>
+{% if config.get('GOOGLE_CLIENT_ID') or True %}
+<a class="btn" href="{{ url_for('google_login') }}">Continue with Google</a>
+<p style="text-align:center">or use your verified email</p>
+{% endif %}
+<form method="post">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<input name="email" type="email" placeholder="Email" autocomplete="email" required>
+<input name="password" type="password" placeholder="Password" autocomplete="current-password" required>
+<button class="btn">Login</button>
+</form>
+<p>New user? <a href="{{url_for('register')}}">Create account</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+General AI reliability
+AI-generated answers can contain mistakes. For important decisions, verify facts using primary or official sources. When the assistant is uncertain, it should say so rather than inventing information.

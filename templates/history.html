@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}<h1>Conversation history</h1>
+{% if rows %}{% for r in rows %}<div class="history"><b>{{r['category']}}</b><small>{{r['created_at']}}</small><p><strong>You:</strong> {{r['query']}}</p><p>{{r['answer']}}</p></div>{% endfor %}
+{% else %}<p>No conversations yet.</p>{% endif %}
+{% endblock %}
