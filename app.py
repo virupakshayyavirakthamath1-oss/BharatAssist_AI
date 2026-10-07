@@ -175,20 +175,29 @@ def _google_enabled():
 
 
 def _google_flow(state=None):
+    redirect_uri = _google_redirect_uri()
+
     client_config = {
         "web": {
             "client_id": app.config["GOOGLE_CLIENT_ID"],
             "client_secret": app.config["GOOGLE_CLIENT_SECRET"],
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
-            "redirect_uris": [_google_redirect_uri()],
+            "redirect_uris": [redirect_uri],
         }
     }
-    return Flow.from_client_config(
+
+    flow = Flow.from_client_config(
         client_config,
         scopes=["openid", "email", "profile"],
         state=state,
     )
+
+    # IMPORTANT:
+    # Explicitly set the redirect URI used by Google OAuth.
+    flow.redirect_uri = redirect_uri
+
+    return flow
 
 
 @app.route("/")
